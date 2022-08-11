@@ -1,3 +1,4 @@
+'use strict'
 /* variable */
 let user
 let user2
