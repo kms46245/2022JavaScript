@@ -38,3 +38,18 @@ showName('erica', 'terry')
 
 // max - parameter의 최고값을 리턴
 console.log(Math.max(1, 2, 3))
+
+
+// spread - 배열을 펼치다 -> 배열을 이용가능하게 해준다.
+// rest와 똑같이 생겼지만, 기능 자체는 다른 개념이다.
+let arr = [1, 2, 3]
+console.log(Math.max(arr)) // 배열을 max로 처리하지못해 NaN으로 읽힌다.
+console.log(Math.max(...arr)) // ...(rest)를 이용해서 배열의 값을 받아냈다.
+
+let arr2 = [4, 5, 6]
+console.log(...arr, ...arr2)
+console.log(Math.max(0, ...arr, 7, ...arr2,  8))
+
+// 배열 내에서 spread하여 value값으로 사용도 가능하다.
+arr = [0, ...arr2, 9]
+console.log(arr)
