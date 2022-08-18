@@ -37,5 +37,3 @@ user1.greet()
 
 // 과제: user1.greet을 이용해서, I am colin.을 출력하라.
 user1.greet.call(user2)
-
-// test cording
