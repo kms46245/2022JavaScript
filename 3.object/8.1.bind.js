@@ -14,4 +14,4 @@ let fn = user.greet
 setTimeout(fn, 200)
 
 
-setTimeout(() => user.greet(), 300)
+setTimeout(() => user.greet(), 300) 

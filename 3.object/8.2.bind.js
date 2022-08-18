@@ -21,7 +21,7 @@ user = {
         console.log(`I am ${this.name}.`)
     }
 }
-
+ 
 // 과제: user.greet을 할당하라.
 //      greet의 this엔 user가 담겨있다.
 fn = user.greet.bind(user)
