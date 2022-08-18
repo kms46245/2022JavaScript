@@ -13,4 +13,4 @@ let rabbit = {
 }
 
 rabbit = new Object()
-rabbit.age = 3
+rabbit.age = 3 
