@@ -12,6 +12,21 @@
                 "<node_internals>/**"
             ],
             "program": "${file}"
+            
         }
     ]
+    /*   터미널에서 디버그 콘솔 사용
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]*/
 }

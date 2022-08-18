@@ -1,5 +1,4 @@
 let user = {
-    //key: value
     name: 'frances', //entry는 ,로 구분
     age: 70
 }

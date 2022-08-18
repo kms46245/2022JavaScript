@@ -31,7 +31,7 @@ const player3 = new Player('양승일')
 // 최한석이 한아름에게 공을 패스했다. 한아름은 양승일에게 공을
 // 패스했다.  양승일은 공을 찼다.
 
-player3.kick(player2.pass(player1.pass(ball)))
+console.log(player3.kick(player2.pass(player1.pass(ball))))
 
 //
 function Food(name) {

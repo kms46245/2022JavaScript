@@ -64,7 +64,7 @@ function SmallUser() {
 }
 
 console.log(new BigUser().name, new SmallUser().name)
-console.log(BigUser().name, SmallUser().name)
+//console.log(BigUser().name, SmallUser().name)
 //과제: new를 하지않고, 앱이 살도록 위 코드를 수정하라.
 console.log(BigUser().name, SmallUser()?.name)
 
