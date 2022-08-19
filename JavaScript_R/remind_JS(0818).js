@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 //3.5 function
 
 function sayHi(myName, ...jobs){
