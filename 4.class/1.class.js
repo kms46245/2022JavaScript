@@ -12,6 +12,8 @@ let user = new User('john')
 console.log(user.name)
 user.introduce()            // 보통은 java를 이용하던 사람들만 이용하는 문법
 
+// [[isClassContructor]] : true
+//User('John')  // Type Error - class constructor User cannot be invoked without 'new'
 
 User = class {
     name // 멤버 변수임을 알려주는 효과가 있는것이고, 없어도 작동된다.
@@ -28,6 +30,9 @@ User = class {
 }
 
 new User('abel', 12).introduce()
+user.introduce()    // abel /12
+console.log(user.name)  // abel
+console.log(User.prototype.name)    // undef
 
 
 function makeClass(phrase){     // 클래스를 값으로 생각해 클래스를 리턴 받을수도 있다.
