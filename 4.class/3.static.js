@@ -50,6 +50,19 @@ console.log(article1.publisher, article1.address, article1.compare)
 // 반대도 마찬가지로 클래스에서 객체의 요소를 찾으면 undef
 console.log(Article.title, Article.viewCnt)
 
-console.log(Object.keys(article1))
-console.log(Object.keys(Article))   // keys에서는 method(여기에선 compare)를 call하지 못한다
-for(let key in Article) console.log(key)    // iterating하여 풀어도 확인이 안되는것을 볼수있다.\
+console.log(Object.keys(Article))   // 클래스 요소 - publisher, address, getPrice()
+console.log(Article.prototype)      // 클래스의 프로토타입 요소 - 생성자, tostring valueof symbol
+console.log(Object.keys(article1))  // 클래스로 만든 객체의 요소 - title, viewcnt
+
+let articles = [article1, article2]
+console.log(articles)
+
+articles.sort(Article.compare)    // sort - 안의 원소들을 정렬한다.
+// compare의 값이 a - b의 개념으로 다가가니 오름차순으로 정렬되었다.
+console.log(articles)
+
+Article.compare = (a, b) => b - a
+// compare의 값이 b - a의 개념으로 들어갈때는 내림차순으로 정렬되었다.
+articles.sort(Article.compare)
+console.log(articles)
+//이로써 알수있는것은 함수식에따라 오름차순 내림차순을 정렬한다.
