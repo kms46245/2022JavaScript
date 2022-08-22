@@ -24,39 +24,28 @@ animal.stop()
 console.log(animal)
 
 
-class Duck extends Animal{
+class Rabbit extends Animal{
     
-    // 코딩하지않으면 기본 생성자가 자동으로 생성된다.
-    run(speed) {
-        this.speed = speed / 10
-        console.log(this.name, this.speed, 'run ')
-    }
+    /* 코딩하지않으면 기본 생성자가 자동으로 생성된다.
+    *기본생성자*
+    constructor(...args){
+        super(...args)          // 부모의 생성자가 실행
+    }*/
 
     hide() {
         console.log(this.name, 'hide')
     }
 }
 
-let duck = new Duck('duck') // prototype인 Animal의 생성자를 사용한 것이다.
-console.log(duck)
+let rabbit = new Rabbit() // prototype인 Animal의 생성자를 사용한 것이다.
+console.log(rabbit)
 
-duck.run(10)
-duck.stop()
-duck.hide()
+rabbit = new Rabbit('rabbit')
+console.log(rabbit)
 
-
-class Rabbit extends Animal {
-    stop() {
-        super.stop()        // super - 부모(prototype)의 클래스에서의 속성을 사용한다.
-        this.hide()         // this - 자식(본인)의 클래스 속성을 사용
-    }
-
-    hide() {
-        console.log(this.name, 'hide.')
-    }
-}
-
-new Rabbit('rabbit').stop()
+console.log(rabbit.name)
+rabbit.run(100)
+rabbit.hide()
 
 //
 Rabbit = class extends Animal{
@@ -64,6 +53,16 @@ Rabbit = class extends Animal{
         super(name)       // 생성자의 경우에는 부모의 생성자를 사용한다(파라미터도 맞춰줘야함)
         this.color = color
     }
+
+    stop() {
+        super.stop()      // method도 마찬가지
+        this.hide()
+    }
+
+    hide() {
+        console.log(this.name, this.color, 'hide.')
+    }
 }
 
-console.log(new Rabbit('rabbit', 'black'))
+rabbit = new Rabbit('rabbit', 'black')
+rabbit.stop()
