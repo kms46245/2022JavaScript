@@ -94,3 +94,65 @@ for(let key in arr) console.log(arr[key])
 
 // let ... of ... - in과 다르게 인덱스를 포함한 value를 리턴
 for(let val of arr) console.log(val)
+
+
+//
+function print(e) {
+    console.log(e)
+}
+
+function print2(e, i){
+    console.log(`[${i}]: ${e}`)
+}
+
+function print3(e, i, arr) {
+    arr[i] = e.toUpperCase()    // toUpperCase() - 각 배열의 원소를 대문자로 변환
+}
+
+//
+arr = ['a', 'b']
+
+arr.forEach(print)
+
+arr.forEach(print2)
+console.log(arr)
+
+arr.forEach(print3)
+console.log(arr)
+
+//
+arr = [1, 2, 3]
+let arr2 = arr.map(e => e * 2)    // map - map에서 하나씩 원소를 읽은뒤 해당 조건을 적용시켜 새로운 배열로 리턴한다.
+console.log(arr, arr2)
+
+//
+let group = {       // 여기서의 group은 namespace의 역할로 하고 하나의 클래스같은 개념으로 보면 편하다.
+    title: 'art',
+    students: ['winston', 'cal', 'maritha'],
+    list() {
+        this.students.forEach(studentName => 
+            console.log(this.title, ':', studentName))
+    }
+}
+
+group.list()
+
+
+//
+arr = ['hello', 'world', 2]
+let greeting = arr.join()       // join - 각각의 원소를 붙혀 하나의 문자로 만든다.
+console.log(greeting)       // 이때 ,기준의 원소 하나하나를 token이라고한다.
+console.log(typeof greeting)
+
+console.log(arr.join('/'))  // 구분자를 바꾸고싶을때는 직접 파라미터를 넣어준다.
+// 과제: join()에서 'helloworld2'를 return 하라.
+console.log(arr.join(''))
+
+//
+arr = [1, 2, 3]
+str = arr.toString()    // toString - 배열을 스트링타입으로 변환
+console.log(str, '/', typeof str)
+
+//
+str = JSON.stringify(arr)   // json을 이용해 문자를 다시 배열로 되돌릴수 있다.
+console.log(str, '/', typeof str)
