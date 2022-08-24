@@ -1,5 +1,5 @@
 let arr = ['ilya', 'kantor']
-let [name, surname] = arr   // [value, ...] - 배열을 value에 담는다.
+let [name, surname] = arr   // [value, ...] - 배열 모양의 값들을 value에 담는다.
 console.log(name, surname)
 
 let [one, two] = [1, 2, 3]
@@ -78,7 +78,7 @@ console.log(title, height, width);
 let {width: w, height: h} = options // 해당하는 속성의 이름을 임의로 지정해줄 수 있다.
 console.log(w, h)
 
-let {title: t, ...other} = options  // ...other - 대입해준 값을 제외한 나머지 값들을 other에 넣는다.
+let {title: t, ...other} = options  // ... - 대입해준 값을 제외한 나머지 값들을 other에 넣는다.
 console.log(t, other)
 
 let {title: subject, wide=1000} = options   // key가없을때의 기본값도 지정가능
@@ -97,3 +97,26 @@ let bread = {
 // 과제: bread에서 size와 items를 추출하라.
 let {size, items} = bread
 console.log(size, items)
+
+//쪼개서 뽑아내기
+let {
+    size: {
+        width: w2,
+        height: h2
+    },
+    items: [item1, item2]
+} = bread
+console.log(w2, h2, item1, item2)
+
+//
+let menu = {
+    title: 'menu',
+    items: ['list', 'add'],
+    expired: 10
+}
+
+function showMenu({title: name, items: [item1, item2]}) {
+    console.log(name, item1, item2)
+}
+
+showMenu(menu)
